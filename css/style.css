@@ -1,0 +1,180 @@
+body {
+  /*background: url(../img/back2.jpg) grey;*/
+  background: #000;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#page {
+  text-align: center;
+  margin: auto;
+}
+
+#page h1 {
+  color: white;
+  margin: 0 0 110px 0;
+  font-size: 70px;
+  font-family: 'Sonsie One', cursive;
+  text-shadow: 2px 2px 8px #000;
+}
+
+#wrapper {
+  display: block;
+  width:1024px;
+  height: 100%;
+  background: url(../img/curtain.jpg) no-repeat;
+  background-size: 100%;
+  margin: auto;
+}
+
+#video {
+  display: block;
+  width: 352px;
+  height: 288px;
+  border: 20px solid #000;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -khtml-border-radius: 20px;
+  border-radius: 20px;
+  margin: auto;
+  background: #FFF;
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+}
+
+#start {
+  display: block;
+  text-indent: -9999px;
+  background: url(../img/go_button.png) no-repeat;
+  background-size: 200px 200px;
+  width: 200px;
+  height: 200px;
+  margin: auto;
+  overflow: hidden;
+}
+
+#controls {
+  float: left;
+  height: 100%;
+  width: 210px;
+  background: url(../img/wood.png) #CCC;
+  text-align: center;
+  margin-top: 40px;
+}
+
+#controls a {
+  display: block;
+  text-indent: -9999px;
+  width: 122px;
+  height: 42px;
+  margin: 5px auto;
+}
+
+#controls a.facebook {
+  background: url(../img/SocialMediaBookmarkIcon/buttons/facebook.png);
+}
+
+#controls a.twitter {
+  background: url(../img/SocialMediaBookmarkIcon/buttons/twitter.png);
+}
+
+#controls a.tumblr {
+  background: url(../img/SocialMediaBookmarkIcon/buttons/tumblr.png);
+}
+
+#controls a.flickr {
+  background: url(../img/SocialMediaBookmarkIcon/buttons/flickr.png);
+}
+
+#controls a.download {
+  background: url(../img/download.png);
+}
+
+#controls a.download {
+  background: url(../img/printer.png);
+  width: 128px;
+  height: 128px;
+  margin-top: 30px;
+}
+
+#filmroll-wrapper {
+  float: right;
+  height: 100%;
+  width: 210px;
+  background: url(../img/wood.png) #CCC;
+  background-position: right;
+}
+
+#filmroll {
+  display: none;
+  width: 186px;
+  background: url(../img/grey.jpg) #CCC;
+  padding: 5px 5px 15px 5px;
+  margin: auto;
+  height: auto;
+  z-index: 500;
+  position: absolute;
+  top: 95px;
+  right: 7px;
+  text-align: center;
+}
+
+#filmroll h4 {
+  font-family: 'Sonsie One', cursive;
+  text-shadow: 2px 2px 8px #000;
+  margin-bottom: 2px;
+  margin-top: 2px; 
+}
+
+#filmroll img {
+  display: block;
+  clear: both;
+  z-index: 1000;
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+}
+
+#slot-wrapper {
+  background: grey;
+  width: 180px;
+  height: 100px;
+  margin: auto;
+  margin-top: 40px;
+  z-index: 100;
+  border: 10px solid grey;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -khtml-border-radius: 20px;
+  text-align: center;
+}
+
+#slot {
+  display: block;
+  position: absolute;
+  top: 92px;
+  right: 0;
+  width: 194px;
+  height: 5px;
+  border: 2px inset #000;
+  margin-right: 6px;
+  background: #333;
+}
+
+.countdown {
+  color: #FFF;
+  font-size: 180px;
+  margin: 0;
+  padding: 0;
+  line-height: 150px;
+  font-family: 'Sonsie One', cursive;
+  text-shadow: 2px 2px 8px #000;
+}

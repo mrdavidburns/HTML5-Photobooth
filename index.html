@@ -1,0 +1,86 @@
+<html>
+  <head>
+    <title>Snapstr</title>
+    <!--<script src="/js/camera.js"></script>-->
+    <style type='text/css'  media='all'>
+      @import '/css/style.css';
+    </style>
+    <style type='text/css'  media='print'>
+      @import '/css/print.css';
+    </style>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/snapstr.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Sonsie+One' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <embed src="/audio/camera1.wav" autostart="false" hidden="true" loop="false">
+    <embed src="/audio/beep.mp3" autostart="false" hidden="true" loop="false">
+    <div id="controls">
+      <a href="#" class="facebook">facebook</a>
+      <a href="#" class="twitter">twitter</a>
+      <a href="#" class="tumblr">tumblr</a>
+      <a href="#" class="flickr">flickr</a>
+      <a href="#" class="download">download</a>
+      <a href="#" onClick="window.print();return false;" class="print">print</a>
+    </div>
+    <div id="filmroll-wrapper">
+      <div id="slot-wrapper">
+        <div id="slot"></div>
+        <p>share your photos</p>
+      </div>
+      <div id="filmroll">
+        <h4>-Snapstr-</h4>
+      </div>
+    </div>
+    <div id="page">
+      <div id="wrapper">
+        <h1>Snapstr</h1>
+        
+        <div id="video">
+          <video id="live" autoplay></video>
+          <canvas id="snapshot" style="display:none"></canvas>
+        </div>
+        <p><a href="#" id="start">Click Here to Start Snapstr</a></p>
+        <a href="#" id="snap" onclick="snap()"></a>
+        <p class="countdown"></p>       
+      </div> 
+    </div>
+
+    <script>
+      video = document.getElementById("live")
+    
+      navigator.webkitGetUserMedia("video",
+          function(stream) {
+            video.src = window.webkitURL.createObjectURL(stream)
+          },
+          function(err) {
+            console.log("Unable to get video stream!")
+          }
+      )
+    
+      function snap() {
+        live = document.getElementById("live")
+        snapshot = document.getElementById("snapshot")
+        filmroll = document.getElementById("filmroll")
+    
+        // Make the canvas the same size as the live video
+        snapshot.width = live.clientWidth
+        snapshot.height = live.clientHeight
+    
+        // Draw a frame of the live video onto the canvas
+        c = snapshot.getContext("2d")
+        c.drawImage(live, 0, 0, snapshot.width, snapshot.height)
+    
+        // Create an image element with the canvas image data
+        img = document.createElement("img")
+        img.src = snapshot.toDataURL("image/png")
+        img.style.padding = 5
+        img.width = snapshot.width / 2
+        img.height = snapshot.height / 2
+    
+        // Add the new image to the film roll
+        filmroll.appendChild(img)
+      }
+  </script>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+body {visibility:hidden;}
+
+#page h1,
+#video,
+#start,
+#controls,
+#slot-wrapper,
+#slot,
+.countdown {
+  display:none;
+}
+
+#filmroll {visibility:visible; text-align: center; margin: auto;}
