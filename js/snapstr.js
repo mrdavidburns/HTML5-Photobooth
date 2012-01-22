@@ -6,6 +6,8 @@ jQuery(
   $("#controls a").hide();
   // Don't start photobooth until user clicks
   $("#start").click(function() {
+    // The number of photos that will be taken
+    var limit = 4;
     // The initial amount of time for countdown 
     var count = 3; // 10
     // Initiate counter for number of pictures to take
@@ -41,31 +43,30 @@ jQuery(
         $("#video video").fadeIn('fast');
         // Increment snap to count number of pictures taken so far
         snap++;
-        // We only want 4 pictures. Time to stop the loop and let user take action.
-        if (snap === 4) {
+        // We only want limit number of pictures. Time to stop the loop and let user take action.
+        if (snap === limit) {
           // Inform the user that photo session is done
           $("p.countdown").html("DONE");
           // Stop the interval loop
           clearInterval(countdown);
           // Display the photo booth pictures in a way that looks like it's coming out of actual photobooth
           $("#filmroll").slideDown(5000, function() {
+            // Initiate image string for POST
+            var image = '';
+            $("#filmroll img").each(function(index) {
+              image = image + $(this).attr("src");
+            });
+            // Send all images to PHP file to be merged into single image and stored on server
+            $.ajax({
+              type: "POST",
+              url: "imagesave.php",
+              data: "img=" + image,
+              success: function(data) {
+                $("#controls a.download").attr({'href': data, 'target': '_blank'});
+              }
+            });
             // Show the social share links, download and print buttons/icons
             $("#controls a").show();
-            // Allow users to print the photo strip via print link/icon
-            /* THIS WON'T LET ME SELECT THE PRINT ICON */
-            $("#controls a").click(function() {
-              window.print();
-              
-              return false();
-            });
-            $("#filmroll img").each(function(index) {
-              var image = $(this).attr("src");
-              $.ajax({
-                type: "POST",
-                url: "imagesave.php",
-                data: "img=" + image
-              });
-            });
           });
           
           return false;
