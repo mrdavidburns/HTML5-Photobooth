@@ -1,25 +1,27 @@
 <html>
   <head>
     <title>Snapstr</title>
+    <link href='http://fonts.googleapis.com/css?family=Sonsie+One' rel='stylesheet' type='text/css'>
     <style type='text/css'  media='all'>
       @import '/css/style.css';
+    </style>
+    <style type='text/css'  media='all'>
+      @import '/libraries/colorbox/example1/colorbox.css';
     </style>
     <style type='text/css'  media='print'>
       @import '/css/print.css';
     </style>
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/snapstr.js"></script>
-    <link href='http://fonts.googleapis.com/css?family=Sonsie+One' rel='stylesheet' type='text/css'>
   </head>
   <body>
     <embed src="/audio/camera1.wav" autostart="false" hidden="true" loop="false">
     <embed src="/audio/beep.mp3" autostart="false" hidden="true" loop="false">
     <div id="controls">
-      <a href="#" class="facebook">facebook</a>
-      <a href="#" class="twitter">twitter</a>
-      <a href="#" class="tumblr">tumblr</a>
-      <a href="#" class="flickr">flickr</a>
-      <a href="#" class="download">download</a>
+      <a href="#" class="facebook" onclick="window.open(this.href, 'facebook',
+'left=20,top=20,width=640,height=270,toolbar=0,resizable=0'); return false;">facebook</a>
+      <a href="#" class="twitter" onclick="window.open(this.href, 'twitter',
+'left=20,top=20,width=415,height=240,toolbar=0,resizable=0'); return false;">twitter</a>
+      <a href="#" class="tumblr" target="_blank">tumblr</a>
+      <a href="#" class="download" target="_blank">download</a>
       <a href="#" onClick="window.print();return false;" class="print">print</a>
     </div>
     <div id="filmroll-wrapper">
@@ -81,5 +83,8 @@
         filmroll.appendChild(img)
       }
   </script>
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/snapstr.js"></script>
+  <script src="/libraries/colorbox/colorbox/jquery.colorbox-min.js"></script>
   </body>
 </html>
