@@ -64,13 +64,13 @@ body {
   margin-bottom: 30px;
 }
 
-#controls {
+#controls-wrapper {
   float: left;
   height: 100%;
   width: 210px;
   background: url(../img/wood.png) #CCC;
   text-align: center;
-  margin-top: 40px;
+  padding-top: 40px;
 }
 
 #controls a {
@@ -184,3 +184,5 @@ body {
   font-family: 'Sonsie One', cursive;
   text-shadow: 2px 2px 8px #000;
 }
+
+#preload {display:none;}

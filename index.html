@@ -13,16 +13,20 @@
     </style>
   </head>
   <body>
-    <embed src="/audio/camera1.wav" autostart="false" hidden="true" loop="false">
-    <embed src="/audio/beep.mp3" autostart="false" hidden="true" loop="false">
-    <div id="controls">
-      <a href="#" class="facebook" onclick="window.open(this.href, 'facebook',
-'left=20,top=20,width=640,height=270,toolbar=0,resizable=0'); return false;">facebook</a>
-      <a href="#" class="twitter" onclick="window.open(this.href, 'twitter',
-'left=20,top=20,width=415,height=240,toolbar=0,resizable=0'); return false;">twitter</a>
-      <a href="#" class="tumblr" target="_blank">tumblr</a>
-      <a href="#" class="download" target="_blank">download</a>
-      <a href="#" onClick="window.print();return false;" class="print">print</a>
+    <div id="preload">
+      <embed src="/audio/camera1.wav" autostart="false" hidden="true" loop="false">
+      <embed src="/audio/beep.mp3" autostart="false" hidden="true" loop="false">
+    </div>
+    <div id="controls-wrapper">
+      <div id="controls">
+        <a href="#" class="facebook" onclick="window.open(this.href, 'facebook',
+  'left=20,top=20,width=640,height=270,toolbar=0,resizable=0'); return false;">facebook</a>
+        <a href="#" class="twitter" onclick="window.open(this.href, 'twitter',
+  'left=20,top=20,width=415,height=240,toolbar=0,resizable=0'); return false;">twitter</a>
+        <a href="#" class="tumblr" target="_blank">tumblr</a>
+        <a href="#" class="download" target="_blank">download</a>
+        <a href="#" onClick="window.print();return false;" class="print">print</a>
+      </div>
     </div>
     <div id="filmroll-wrapper">
       <div id="slot-wrapper">
@@ -44,9 +48,8 @@
         <p><a href="#" id="start">Click Here to Begin</a></p>
         <a href="#" id="snap" onClick="snap()"></a>
         <p class="countdown"></p>       
-      </div> 
+      </div>
     </div>
-
     <script>
       video = document.getElementById("live")
     
