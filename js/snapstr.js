@@ -52,11 +52,19 @@ jQuery(
             // Show the social share links, download and print buttons/icons
             $("#controls a").show();
             // Allow users to print the photo strip via print link/icon
-            // For some reason this isn't working
-            $("a.print").click(function() {
+            /* THIS WON'T LET ME SELECT THE PRINT ICON */
+            $("#controls a").click(function() {
               window.print();
               
-              return false;
+              return false();
+            });
+            $("#filmroll img").each(function(index) {
+              var image = $(this).attr("src");
+              $.ajax({
+                type: "POST",
+                url: "imagesave.php",
+                data: "img=" + image
+              });
             });
           });
           
