@@ -64,7 +64,7 @@ jQuery(
               success: function(data) {
                 var fullpath = encodeURIComponent('http://' + document.domain + data);
                 var message = encodeURIComponent("Here's my photobooth shots from Snapstr.");
-                $("#controls a.download").attr({'href': fullpath, 'target': '_blank'});
+                $("#controls a.download").attr('href', fullpath);
                 $("#controls a.twitter").attr('href', 'https://twitter.com/intent/tweet?source=webclient&text=' + message + ' ' + fullpath);
                 $("#controls a.facebook").attr('href', 'http://www.facebook.com/sharer.php?u=' + fullpath + '&t=' + message);
                 $("#controls a.tumblr").attr('href', 'http://www.tumblr.com/share/photo?source=' + fullpath + '&caption=' + message).colorbox({iframe:true, innerWidth:450, innerHeight:420});

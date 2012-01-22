@@ -49,13 +49,19 @@ body {
 
 #start {
   display: block;
-  text-indent: -9999px;
+  /* text-indent: -9999px;
   background: url(../img/go_button.png) no-repeat;
   background-size: 200px 200px;
   width: 200px;
   height: 200px;
   margin: auto;
-  overflow: hidden;
+  overflow: hidden;*/
+  color: #FFF;
+  text-decoration: none;
+  font-size: 70px;
+  font-family: 'Sonsie One', cursive;
+  text-shadow: 2px 2px 8px #000;
+  margin-bottom: 30px;
 }
 
 #controls {
