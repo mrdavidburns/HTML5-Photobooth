@@ -95,7 +95,7 @@ body {
   background: url(../img/download.png);
 }
 
-#controls a.download {
+#controls a.print {
   background: url(../img/printer.png);
   width: 128px;
   height: 128px;
