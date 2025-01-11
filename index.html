@@ -10,6 +10,7 @@
     <style type='text/css'  media='print'>
       @import './css/print.css';
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.colorbox/1.6.4/example1/colorbox.css" />
   </head>
   <body>
     <div id="preload">
@@ -52,14 +53,13 @@
     <script>
       video = document.getElementById("live")
     
-      navigator.webkitGetUserMedia("video",
-          function(stream) {
-            video.src = window.webkitURL.createObjectURL(stream)
-          },
-          function(err) {
-            console.log("Unable to get video stream!")
-          }
-      )
+      navigator.mediaDevices.getUserMedia({ video: true })
+          .then(function(stream) {
+            video.srcObject = stream;
+          })
+          .catch(function(err) {
+            console.log("Unable to get video stream!", err);
+          });
     
       function snap() {
         live = document.getElementById("live")
@@ -93,7 +93,4 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.colorbox/1.6.4/jquery.colorbox-min.js" 
           integrity="sha512-DAVSi/Ovew9ZRpBgHs6hJ+EMdj1fVKE+csL7mdf9v7tMbzM1i4c/jAvHE8AhcKYazlFl7M8guWuO3lDNzIA48A==" 
           crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.colorbox/1.6.4/example1/colorbox.min.css" 
-        integrity="sha512-wWaZUf/IFoWzr9YF/9J0WJ7/ZwZrwVDHZtCX9SHO/dIOllH5tqFYNVjLHFbAq8i0ImQ6/m2lDyQaIWO9rDF+2g==" 
-        crossorigin="anonymous">
 </html>
