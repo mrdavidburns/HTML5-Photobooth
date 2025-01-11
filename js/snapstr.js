@@ -29,14 +29,14 @@ jQuery(
       // Create beep sound for every 3,2,1
       if (count <= 3 && count != 0) {
         $('embed').remove();
-        $('body').append('<embed src="/audio/beep.mp3" autostart="true" hidden="true" loop="false">');
+        $('body').append('<embed src="./audio/beep.mp3" autostart="true" hidden="true" loop="false">');
       }
       else if ((count % 10 === 0) && count < 10) {
         // Counter has reached 0, time to take a picture
         $("#snap").click();
         $('embed').remove();
         // Create camera sound, users love camera sounds
-        $('body').append('<embed src="/audio/camera1.wav" autostart="true" hidden="true" loop="false">');
+        $('body').append('<embed src="./audio/camera1.wav" autostart="true" hidden="true" loop="false">');
         // FadeOut the video which shows white background
         $("#video video").fadeOut('fast');
         // FadeIn the video, this is a visual indicator that a photo was taken
@@ -59,7 +59,7 @@ jQuery(
             // Send all images to PHP file to be merged into single image and stored on server
             $.ajax({
               type: "POST",
-              url: "imagesave.php",
+              url: "./imagesave.php",
               data: "img=" + image,
               success: function(data) {
                 var fullpath = encodeURIComponent('http://' + document.domain + data);
