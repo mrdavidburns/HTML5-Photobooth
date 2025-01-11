@@ -14,3 +14,5 @@ services:
       init:
         # Link the document root to the expected path
         - ln -snf "${TUGBOAT_ROOT}" "${DOCROOT}"
+        # Ensure the pictures directory is writable
+        - chmod -R 775 "${TUGBOAT_ROOT}/pictures"
