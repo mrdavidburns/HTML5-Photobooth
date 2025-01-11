@@ -4,7 +4,9 @@
 	$dir = time();
   // Check if the directory already exists
   if (!is_dir(UPLOAD_DIR . $dir)) {
-    mkdir(UPLOAD_DIR . $dir, 0755, true);
+    if (!mkdir(UPLOAD_DIR . $dir, 0755, true)) {
+      die('Failed to create directories: ' . UPLOAD_DIR . $dir);
+    }
   }
 	$post = $_POST['img'] ?? '';
 	$images = explode('data:image/png;base64,', $post);
