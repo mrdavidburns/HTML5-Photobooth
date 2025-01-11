@@ -10,7 +10,7 @@
   }
 	$post = $_POST['img'] ?? '';
 	$images = explode('data:image/png;base64,', $post);
-	$snapstr = UPLOAD_DIR . $dir . '/snapstr.png';
+	$snapstr = UPLOAD_DIR . '/snapstr.png';
   if(!copy(UPLOAD_DIR . $dir . '/snapstr.png', $snapstr)) {
     print "IMAGE DUPLICATE FAILED";
     return FALSE;
