@@ -15,3 +15,6 @@ http://snapshot.opera.com/labs/camera/
 Read more:
 - http://arstechnica.com/business/news/2012/01/hands-on-building-an-html5-photo-booth-with-chromes-new-webcam-api.ars
 - http://dev.opera.com/articles/view/getusermedia-access-camera-privacy-ui/
+
+## Installation
+Run `npm install` to install the necessary dependencies.
