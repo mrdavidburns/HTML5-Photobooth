@@ -67,7 +67,7 @@ jQuery(
                 $("#controls a.download").attr('href', 'http://' + document.domain + data);
                 $("#controls a.twitter").attr('href', 'https://twitter.com/intent/tweet?source=webclient&text=' + message + ' ' + fullpath);
                 $("#controls a.facebook").attr('href', 'http://www.facebook.com/sharer.php?u=' + fullpath + '&t=' + message);
-                $("#controls a.tumblr").attr('href', 'http://www.tumblr.com/share/photo?source=' + fullpath + '&caption=' + message).colorbox({iframe:true, innerWidth:450, innerHeight:420});
+                $("#controls a.tumblr").attr('href', 'http://www.tumblr.com/share/photo?source=' + fullpath + '&caption=' + message).colorbox({iframe:true, innerWidth:450, innerHeight:420, href: 'node_modules/jquery-colorbox/jquery.colorbox.js'});
                 // Show the social share links, download and print buttons/icons
                 $("#controls a").show();
               }
