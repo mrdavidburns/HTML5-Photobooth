@@ -7,12 +7,12 @@ services:
   #   3. Routes requests to the preview URL to this service
   apache:
     # Use the available version of Apache by not specifying a version
-    image: tugboatqa/httpd
+    image: tugboatqa/php:8.4-apache
 
     # A set of commands to run while building this service
     commands:
-      # Commands that set up the basic preview infrastructure
       init:
-        # Link the document root to the expected path. This example links the
-        # root of the git repository to the docroot
+        # Link the document root to the expected path
         - ln -snf "${TUGBOAT_ROOT}" "${DOCROOT}"
+        # Ensure the pictures directory is writable
+        - chmod -R 775 "${TUGBOAT_ROOT}/pictures"

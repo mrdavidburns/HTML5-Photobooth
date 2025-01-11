@@ -1,9 +1,12 @@
 <?php
-	// requires php5
-	define('UPLOAD_DIR', 'pictures/');
+	// requires php8
+	define('UPLOAD_DIR', './pictures/');
 	$dir = time();
-  mkdir(UPLOAD_DIR . $dir, 0755, true);
-	$post = $_POST['img'];
+  // Check if the directory already exists
+  if (!is_dir(UPLOAD_DIR . $dir)) {
+    mkdir(UPLOAD_DIR . $dir, 0755, true);
+  }
+	$post = $_POST['img'] ?? '';
 	$images = explode('data:image/png;base64,', $post);
 	$snapstr = UPLOAD_DIR . $dir . '/snapstr.png';
   if(!copy(UPLOAD_DIR . '/snapstr.png', $snapstr)) {

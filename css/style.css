@@ -45,6 +45,17 @@ body {
   transform: scaleX(-1);
   filter: FlipH;
   -ms-filter: "FlipH";
+  overflow: hidden;
+  position: relative;
+}
+
+#live {
+  width: 100%; /* Make the video take the full width of the parent */
+  height: 100%; /* Make the video take the full height of the parent */
+  object-fit: cover; /* Scale the video to cover the container */
+  position: absolute; /* Position it absolutely within the parent */
+  top: 0; /* Align to the top */
+  left: 0; /* Align to the left */
 }
 
 #start {
