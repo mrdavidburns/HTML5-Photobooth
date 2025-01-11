@@ -1,11 +1,11 @@
 <?php
 	// requires php8
-	define('UPLOAD_DIR', './pictures/');
+	define('UPLOAD_DIR', 'pictures');
 	$dir = time();
   // Check if the directory already exists
-  if (!is_dir(UPLOAD_DIR . $dir)) {
-    if (!mkdir(UPLOAD_DIR . $dir, 0755, true)) {
-      die('Failed to create directories: ' . UPLOAD_DIR . $dir);
+  if (!is_dir(UPLOAD_DIR)) {
+    if (!mkdir(UPLOAD_DIR, 0755, true)) {
+      die('Failed to create directories: ' . $dir);
     }
   }
 	$post = $_POST['img'] ?? '';
