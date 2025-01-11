@@ -11,8 +11,6 @@ services:
 
     # A set of commands to run while building this service
     commands:
-      # Commands that set up the basic preview infrastructure
       init:
-        # Link the document root to the expected path. This example links the
-        # root of the git repository to the docroot
+        # Link the document root to the expected path
         - ln -snf "${TUGBOAT_ROOT}" "${DOCROOT}"

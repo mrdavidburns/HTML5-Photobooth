@@ -6,11 +6,11 @@
       @import './css/style.css';
     </style>
     <style type='text/css'  media='all'>
-      @import './libraries/colorbox/example1/colorbox.css';
     </style>
     <style type='text/css'  media='print'>
       @import './css/print.css';
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.colorbox/1.6.4/example1/colorbox.css" />
   </head>
   <body>
     <div id="preload">
@@ -53,14 +53,13 @@
     <script>
       video = document.getElementById("live")
     
-      navigator.webkitGetUserMedia("video",
-          function(stream) {
-            video.src = window.webkitURL.createObjectURL(stream)
-          },
-          function(err) {
-            console.log("Unable to get video stream!")
-          }
-      )
+      navigator.mediaDevices.getUserMedia({ video: true })
+          .then(function(stream) {
+            video.srcObject = stream;
+          })
+          .catch(function(err) {
+            console.log("Unable to get video stream!", err);
+          });
     
       function snap() {
         live = document.getElementById("live")
@@ -86,8 +85,12 @@
         filmroll.appendChild(img)
       }
   </script>
-  <script src="./js/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" 
+          integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" 
+          crossorigin="anonymous"></script>
   <script src="./js/snapstr.js"></script>
-  <script src="./libraries/colorbox/colorbox/jquery.colorbox-min.js"></script>
   </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.colorbox/1.6.4/jquery.colorbox-min.js" 
+          integrity="sha512-DAVSi/Ovew9ZRpBgHs6hJ+EMdj1fVKE+csL7mdf9v7tMbzM1i4c/jAvHE8AhcKYazlFl7M8guWuO3lDNzIA48A==" 
+          crossorigin="anonymous"></script>
 </html>
