@@ -29,14 +29,16 @@ jQuery(
       // Create beep sound for every 3,2,1
       if (count <= 3 && count != 0) {
         $('embed').remove();
-        $('body').append('<embed src="./audio/beep.mp3" autostart="true" hidden="true" loop="false">');
+        $('body').append('<audio id="beepSound" src="./audio/beep.mp3" preload="auto" hidden="true"></audio>');
+        document.getElementById('beepSound').play();
       }
       else if ((count % 10 === 0) && count < 10) {
         // Counter has reached 0, time to take a picture
         $("#snap").click();
         $('embed').remove();
         // Create camera sound, users love camera sounds
-        $('body').append('<embed src="./audio/camera1.wav" autostart="true" hidden="true" loop="false">');
+        $('body').append('<audio id="cameraSound" src="./audio/camera1.wav" preload="auto" hidden="true"></audio>');
+        document.getElementById('cameraSound').play();
         // FadeOut the video which shows white background
         $("#video video").fadeOut('fast');
         // FadeIn the video, this is a visual indicator that a photo was taken
