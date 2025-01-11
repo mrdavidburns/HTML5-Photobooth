@@ -4,14 +4,14 @@
 	$dir = time();
   // Check if the directory already exists
   if (!is_dir(UPLOAD_DIR)) {
-    if (!mkdir(UPLOAD_DIR, 0755, true)) {
-      die('Failed to create directories: ' . $dir);
+    if (!mkdir(UPLOAD_DIR . $dir, 0755, true)) {
+      die('Failed to create directories: ' . UPLOAD_DIR . $dir);
     }
   }
 	$post = $_POST['img'] ?? '';
 	$images = explode('data:image/png;base64,', $post);
 	$snapstr = UPLOAD_DIR . $dir . '/snapstr.png';
-  if(!copy(UPLOAD_DIR . '/snapstr.png', $snapstr)) {
+  if(!copy(UPLOAD_DIR . $dir . '/snapstr.png', $snapstr)) {
     print "IMAGE DUPLICATE FAILED";
     return FALSE;
   }
